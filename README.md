@@ -33,7 +33,7 @@ You need to create a new file named `.env` in the root of this project once you 
 `.env` should contain the following env variables:
 ```
 SECRET_KEY="thisisthesecretkey"
-DATABASE_URL="postgres://postgres:postgres@127.0.0.1:5432/postgres"
+DATABASE_URL="postgres://srdce@127.0.0.1:5432/srdce"
 EMAIL_HOST_USER="smtp_user"
 EMAIL_HOST_PASSWORD="smtp_password"
 ```
