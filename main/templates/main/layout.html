@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartfort Foundation</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    {% if messages %}
+    <div class="alert">
+        {% for message in messages %}
+        <div{% if message.tags %} class="alert-{{ message.tags }}"{% endif %}>{{ message|safe }}</div>
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

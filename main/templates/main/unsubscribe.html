@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="section-title">
+        <a href="{% url 'main:index' %}">Home</a>
+    </div>
+    <h1>Unsubscribe</h1>
+    <p>
+        Are you fed up receiving annoying email notifications every Monday? Unsubscribe now!
+    </p>
+    <form action="{% url 'main:unsubscribe' %}" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+    <div class="section-addendum">
+        <a href="{% url 'main:notification' %}">Subscribe again?</a>
+    </div>
+</section>
+{% endblock %}

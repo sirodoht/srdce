@@ -1,0 +1,47 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<nav>
+    <div class="nav-left">
+        <a href="{% url 'main:rota' previous %}">&larr; past</a>
+    </div>
+    <div class="nav-main">
+        <a href="{% url 'main:rota' current %}" class="nav-main-big {% if is_todays %}modifier-currrent{% endif %}">
+            {{ current|date:"M j" }} – {{ current_endweek|date:"M j" }}
+        </a>
+    </div>
+    <div class="nav-right">
+        <a href="{% url 'main:rota' next %}">future &rarr;</a>
+    </div>
+</nav>
+
+<main>
+    <div class="main-today">
+        {% if not is_todays %}
+        <a href="{% url 'main:rota' todays %}" class="main-today-small">
+            (go to current week)
+        </a>
+        {% endif %}
+    </div>
+    {% for a in assignments %}
+    <div class="main-item">
+        <div class="main-item-left">{{ a.mate.name }}</div>
+        <div class="main-item-right">{{ a.job.title }}</div>
+    </div>
+    {% empty %}
+    <div class="main-empty">
+        No cleaning rota for this week – just dirty.
+    </div>
+    {% endfor %}
+</main>
+
+<footer>
+    <a href="#">Fetish</a>
+    | <a href="#">Print</a>
+    | <a href="#">Specifications</a>
+    | <a href="#">WiFi</a>
+    | <a href="#">Meetups</a>
+</footer>
+{% endblock %}

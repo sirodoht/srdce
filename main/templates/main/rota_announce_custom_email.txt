@@ -1,0 +1,12 @@
+{{ body }}
+
+{{ rota }}
+
+Happy cleaning!
+
+Heartfort Foundation
+https://{{ domain }}{% url 'main:index' %}
+
+
+Unsubscribe here:
+https://{{ domain }}{% url 'main:unsubscribe_oneclick' key %}

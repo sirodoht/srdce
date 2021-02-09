@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="section-title">
+        <a href="{% url 'main:index' %}">Home</a>
+    </div>
+    <h1>Email Notification</h1>
+    <p>
+        Would you like an email notification every Monday when the new cleaning rota gets published?
+    </p>
+    <form action="{% url 'main:notification' %}" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+    <div class="section-addendum">
+        <a href="{% url 'main:unsubscribe' %}">Unsubscribe?</a>
+    </div>
+</section>
+{% endblock %}

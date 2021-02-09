@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="section-title">
+        <a href="{% url 'main:index' %}">Home</a>
+    </div>
+    <h1>Write</h1>
+    <form action="{% url 'main:write' %}" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+</section>
+{% endblock %}
