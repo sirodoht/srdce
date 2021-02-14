@@ -202,3 +202,9 @@ def write(request):
         form = forms.WriteForm()
 
     return render(request, "main/write.html", {"form": form})
+
+
+def issues(_):
+    return redirect(
+        "https://docs.google.com/spreadsheets/d/1P8AMO3dft0-TzZxGo9tRo-1Ts2-op0SiezZxxbdAjxM/edit?usp=sharing"
+    )

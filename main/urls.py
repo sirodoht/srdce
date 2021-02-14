@@ -17,4 +17,5 @@ urlpatterns = [
         name="unsubscribe_oneclick",
     ),
     path("write/", views.write, name="write"),
+    path("issues/", views.issues, name="issues"),
 ]
