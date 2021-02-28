@@ -39,3 +39,42 @@ jobs:
       env:
         SECRET_KEY: "thisisthesecretkey"
         DATABASE_URL: "postgres://postgres:postgres@localhost:5432/postgres"
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    steps:
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/heartfort.key
+          chmod 600 ~/.ssh/heartfort.key
+          cat >> ~/.ssh/config << EOF
+          Host heartfort
+            HostName heartfort.com
+            User root
+            IdentityFile ~/.ssh/heartfort.key
+            StrictHostKeyChecking no
+          EOF
+          echo DATABASE_URL=$DATABASE_URL > ~/sshenv
+          scp ~/sshenv heartfort:~/.ssh/environment
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Install requirements
+        run: ssh heartfort 'cd /opt/apps/srdce && python3 -m venv venv && . venv/bin/activate && pip3 install -r requirements.txt'
+
+      - name: Collect static
+        run: ssh heartfort "cd /opt/apps/srdce && . venv/bin/activate && DATABASE_URL=$DATABASE_URL python3 manage.py collectstatic --noinput"
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Run migrations
+        run: ssh heartfort "cd /opt/apps/srdce && . venv/bin/activate && DATABASE_URL=$DATABASE_URL python3 manage.py migrate"
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Reload server
+        run: ssh heartfort 'touch /etc/uwsgi/vassals/srdce.ini'
