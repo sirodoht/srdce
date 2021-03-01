@@ -63,6 +63,12 @@ jobs:
           SSH_KEY: ${{ secrets.SSH_KEY }}
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      - name: Clone repository
+        run: |
+          rm -rf /opt/apps/srdce
+          cd /opt/apps/
+          git clone git@github.com:sirodoht/srdce.git --config core.sshCommand="ssh -i ~/.ssh/id_rsa_github_deploy_key"
+
       - name: Install requirements
         run: ssh heartfort 'cd /opt/apps/srdce && python3 -m venv venv && . venv/bin/activate && pip3 install -r requirements.txt'
 
