@@ -50,7 +50,7 @@ def rota(request, isodate):
 
     # if date is not a Monday, redirect to the Monday of that week
     if date_requested.weekday() != 0:
-        return redirect("main:rota", isodate=monday_that_week.date())
+        return redirect("rota", isodate=monday_that_week.date())
 
     # calculate next and previous weeks to the one requested
     previous_monday = monday_that_week - timedelta(days=7)
@@ -80,10 +80,10 @@ def notification(request):
             email = form.cleaned_data.get("email")
             if models.Notification.objects.filter(email=email).exists():
                 messages.info(request, "This one already exists")
-                return redirect("main:notification")
+                return redirect("notification")
             form.save()
             messages.success(request, "Notification enabled")
-            return redirect("main:index")
+            return redirect("index")
         else:
             messages.error(request, "Invalid input data")
     else:
@@ -101,10 +101,10 @@ def unsubscribe(request):
             if notifications:
                 notifications.delete()
                 messages.info(request, "Email notification(s) deleted")
-                return redirect("main:unsubscribe")
+                return redirect("unsubscribe")
             else:
                 messages.warning(request, "Email does not exist in notifications list")
-                return redirect("main:unsubscribe")
+                return redirect("unsubscribe")
         else:
             messages.error(request, "Invalid email")
     else:
@@ -126,7 +126,7 @@ def unsubscribe_oneclick(request, key):
     else:
         messages.error(request, "Who are you?")
 
-    return redirect("main:unsubscribe")
+    return redirect("unsubscribe")
 
 
 def handbook(request):
@@ -202,6 +202,7 @@ def write(request):
         form = forms.WriteForm()
 
     return render(request, "main/write.html", {"form": form})
+
 
 
 def issues(_):

@@ -7,8 +7,8 @@ Rota for this week
 Happy cleaning!
 
 Heartfort Foundation
-https://{{ domain }}{% url 'main:index' %}
+https://{{ domain }}{% url 'index' %}
 
 
 Unsubscribe here:
-https://{{ domain }}{% url 'main:unsubscribe_oneclick' key %}
+https://{{ domain }}{% url 'unsubscribe_oneclick' key %}

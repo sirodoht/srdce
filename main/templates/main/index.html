@@ -5,22 +5,22 @@
 {% block content %}
 <nav>
     <div class="nav-left">
-        <a href="{% url 'main:rota' previous %}">&larr; past</a>
+        <a href="{% url 'rota' previous %}">&larr; past</a>
     </div>
     <div class="nav-main">
-        <a href="{% url 'main:rota' current %}" class="nav-main-big {% if is_todays %}modifier-currrent{% endif %}">
+        <a href="{% url 'rota' current %}" class="nav-main-big {% if is_todays %}modifier-currrent{% endif %}">
             {{ current|date:"M j" }} – {{ current_endweek|date:"M j" }}
         </a>
     </div>
     <div class="nav-right">
-        <a href="{% url 'main:rota' next %}">future &rarr;</a>
+        <a href="{% url 'rota' next %}">future &rarr;</a>
     </div>
 </nav>
 
 <main>
     <div class="main-today">
         {% if not is_todays %}
-        <a href="{% url 'main:rota' todays %}" class="main-today-small">
+        <a href="{% url 'rota' todays %}" class="main-today-small">
             (go to current week)
         </a>
         {% endif %}
@@ -38,7 +38,7 @@
 </main>
 
 <footer>
-    <a href="{% url 'main:issues' %}">Issues</a>
+    <a href="{% url 'issues' %}">Issues</a>
     | <a href="#">Print</a>
     | <a href="#">Specifications</a>
     | <a href="#">WiFi</a>
