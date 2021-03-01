@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="section-title">
+        <a href="{% url 'index' %}">Home</a>
+    </div>
+
+    <h1>WiFi</h1>
+    <div>
+        SSID
+    </div>
+    <div style="font-size: 26px;">
+        <code>The Heart Fort</code>
+    </div>
+
+    <br>
+
+    <div>
+        Password
+    </div>
+    <div style="font-size: 26px;">
+        <code>TwoToThePowerOfSix(2^6)</code>
+    </div>
+
+</section>
+{% endblock %}
