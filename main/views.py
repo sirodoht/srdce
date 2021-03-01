@@ -212,3 +212,7 @@ def issues(_):
 
 def specifications(request):
     return render(request, "main/specifications.html")
+
+
+def wifi(request):
+    return render(request, "main/wifi.html")
