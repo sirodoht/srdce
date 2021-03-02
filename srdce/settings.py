@@ -28,7 +28,7 @@ DEBUG = True if os.environ.get("NODEBUG") is None else False
 
 ADMINS = [("Theodore", "zf@sirodoht.com")]
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "heartfort.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "heartfort.com", "95.217.223.96"]
 
 
 # Application definition
