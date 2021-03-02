@@ -12,7 +12,7 @@
     <div>
         SSID
     </div>
-    <div style="font-size: 26px;">
+    <div style="font-size: 24px;">
         <code>The Heart Fort</code>
     </div>
 
@@ -21,9 +21,33 @@
     <div>
         Password
     </div>
-    <div style="font-size: 26px;">
+    <div id="wifi-password" style="font-size: 24px;">
         <code>TwoToThePowerOfSix(2^6)</code>
     </div>
 
 </section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const passwordText = document.getElementById('wifi-password');
+    passwordText.addEventListener('click', function (evt) {
+
+        const node = evt.target;
+        if (document.body.createTextRange) {
+            const range = document.body.createTextRange();
+            range.moveToElementText(node);
+            range.select();
+        } else if (window.getSelection) {
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNodeContents(node);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        } else {
+            console.warn("Could not select text in node: Unsupported browser.");
+        }
+
+    });
+</script>
 {% endblock %}
