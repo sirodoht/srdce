@@ -12,6 +12,7 @@ class User(AbstractUser):
 class Mate(models.Model):
     name = models.CharField(max_length=300)
     joined_at = models.DateTimeField(default=timezone.now)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
