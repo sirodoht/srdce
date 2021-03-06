@@ -86,7 +86,8 @@ The following tools are used:
 * [flake8](https://gitlab.com/pycqa/flake8) for code linting.
 
 ```sh
-black . && isort --profile black . && flake8
+make format
+make lint
 ```
 
 ## Deployment
