@@ -216,3 +216,23 @@ def specifications(request):
 
 def wifi(request):
     return render(request, "main/wifi.html")
+
+
+# TODO
+def generate_week(request):
+    # get jobs
+    jobs = models.Job.objects.filter(is_active=True)
+
+    # identify mates with week off
+
+    # get mates
+    mates = models.Mate.objects.filter(is_active=True)
+    for m in mates:
+        # copy active queue of jobs
+
+        # remove jobs mate has done in the past couple of weeks
+
+        # create assignment
+
+        # remove job done from active queue of jobs
+        pass
