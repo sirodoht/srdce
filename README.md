@@ -108,6 +108,16 @@ export EMAIL_HOST_USER="smtp_user"
 export EMAIL_HOST_PASSWORD="smtp_password"
 ```
 
+## Management
+
+In addition to the standard Django management commands, there is also:
+
+```sh
+python manage.py reset_dev_database
+```
+
+Which fills some sample data for a development database.
+
 ## License
 
 This software is licensed under the MIT license.
