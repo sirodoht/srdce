@@ -2,6 +2,9 @@
 
 {{ rota }}
 
+Cleaning specifications:
+https://{{ domain }}{% url 'specs' %}
+
 Happy cleaning!
 
 Heartfort Foundation
