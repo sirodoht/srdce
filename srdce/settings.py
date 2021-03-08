@@ -155,6 +155,6 @@ EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = 587
 
-DEFAULT_FROM_EMAIL = "Srdce <srdce@heartfort.com>"
+DEFAULT_FROM_EMAIL = "Heartfort Foundation <srdce@heartfort.com>"
 SERVER_EMAIL = "Serverius Djangus <server@heartfort.com>"
 EMAIL_SUBJECT_PREFIX = "[srdce] "
