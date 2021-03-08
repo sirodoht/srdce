@@ -218,6 +218,10 @@ def wifi(request):
     return render(request, "main/wifi.html")
 
 
+def meetups(request):
+    return render(request, "main/meetups.html")
+
+
 # TODO
 def generate_week(request):
     # get jobs

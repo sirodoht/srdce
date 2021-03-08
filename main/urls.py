@@ -19,4 +19,5 @@ urlpatterns = [
     path("issues/", views.issues, name="issues"),
     path("specs/", views.specifications, name="specifications"),
     path("wifi/", views.wifi, name="wifi"),
+    path("meetups/", views.meetups, name="meetups"),
 ]
