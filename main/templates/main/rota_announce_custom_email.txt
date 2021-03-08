@@ -3,7 +3,7 @@
 {{ rota }}
 
 Cleaning specifications:
-https://{{ domain }}{% url 'specs' %}
+https://{{ domain }}{% url 'specifications' %}
 
 Happy cleaning!
 
