@@ -222,6 +222,10 @@ def meetups(request):
     return render(request, "main/meetups.html")
 
 
+def hotwater(request):
+    return render(request, "main/hotwater.html")
+
+
 # TODO
 def generate_week(request):
     # get jobs
