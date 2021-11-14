@@ -226,6 +226,10 @@ def hotwater(request):
     return render(request, "main/hotwater.html")
 
 
+def party(request):
+    return render(request, "main/party.html")
+
+
 # TODO
 def generate_week(request):
     # get jobs

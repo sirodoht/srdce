@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>A HeartFort Christmas!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{% static 'party/assets/css/main.css' %}" />
+</head>
+
+<body class="landing is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="{% url 'party' %}">Another Christmas Miracle</a> by Heart Fort</h1>
+		</header>
+
+		<!-- Banner -->
+		<section id="banner">
+			<h2>Christmas Party!</h2>
+			<p>Come celebrate the holiday season with us</p>
+			<ul class="actions special">
+				<li><a href="#main" class="button primary">Don't mind if I do!</a>
+			</ul>
+		</section>
+
+		<!-- Main -->
+		<section id="main" class="container">
+
+			<section class="box special">
+				<header class="major">
+					<h2>Naughty? Nice? No problem!
+					</h2>
+					<p>An inclusive party regardless of your performance in niceness during the year. <br /> Bring yourself, your good mood, your +1, and your kids (if applicable) and let's celebrate together!</p>
+				</header>
+
+			</section>
+
+			<section class="box special features">
+				<div class="features-row">
+					<section>
+						<span class="icon solid major fa-calendar-day accent3"></span>
+						<h3>When</h3>
+						<p>The party will take place Saturday 11th of December. We will start around 18:00</p>
+						<p>As always, a <a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NHR1b2M5MHBvODk0N3U0bHBwZDh1Zmw2b3AgOWppcmE3NnVkYmtuN201YzZxODliNHNpZjBAZw&tmsrc=9jira76udbkn7m5c6q89b4sif0%40group.calendar.google.com"> Google Calendar event</a> for your convenience (no iCal this time Theo) </p>
+					</section>
+					<section>
+						<span class="icon solid major fa-tshirt accent2"></span>
+						<h3>Dress Code</h3>
+						<p>Fancy! Less put our nice clothes, and remember to wear a piece of <strong><span style="color: red">red</span></strong> clothing!</p>
+					</section>
+				</div>
+				<div class="features-row">
+					<section>
+						<span class="icon solid major fa-map-marker-alt accent4"></span>
+						<h3>Where</h3>
+						<p>At our house of course! The address is <a href="https://goo.gl/maps/hVicvKGitg2cTprz5">64 Hertford Rd, N1 5AE</a>.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-biohazard accent5"></span>
+						<h3>Covid</h3>
+						<p>We ask people to get a rapid test on the day before, if possible.</p>
+					</section>
+				</div>
+			</section>
+
+			<section class="box special">
+				<header class="major">
+					<h2>We can't wait to see you!
+					</h2>
+				</header>
+				<span class="image featured"><img src="{% static 'party/images/the-office-bottles.jpg'%}" alt="" /></span>
+			</section>
+
+		</section>
+
+
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="copyright">
+				<li>&copy; The Heart Fort. All rights reserved.</li>
+				<li>Made with <span class="icon fa-heart accent2"></span> by the Heart Fort IT crowd</a>
+				</li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{% static 'party/assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'party/assets/js/jquery.dropotron.min.js' %}"></script>
+	<script src="{% static 'party/assets/js/jquery.scrollex.min.js' %}"></script>
+	<script src="{% static 'party/assets/js/browser.min.js' %}"></script>
+	<script src="{% static 'party/assets/js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'party/assets/js/util.js' %}"></script>
+	<script src="{% static 'party/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
