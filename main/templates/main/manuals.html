@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="section-title">
+        <a href="{% url 'index' %}">Home</a>
+    </div>
+
+    <h1>House appliances' manuals</h1>
+    <p>
+        <ul>
+            <li><a href="{% static 'manuals/dishwasher.pdf' %}">Dishwasher</a></li>
+            <li><a href="{% static 'manuals/washing_machine.pdf' %}">Washing machine</a></li>
+            <li><a href="{% static 'manuals/microwave.pdf' %}">Microwave</a></li>
+            <li><a href="{% static 'manuals/fridge_left.pdf' %}">Fridge (left)</a></li>
+        </ul>
+    </p>
+
+</section>
+{% endblock %}

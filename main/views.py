@@ -229,6 +229,9 @@ def hotwater(request):
 def party(request):
     return render(request, "main/party.html")
 
+def manuals(request):
+    return render(request, "main/manuals.html")
+
 
 # TODO
 def generate_week(request):

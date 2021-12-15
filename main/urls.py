@@ -22,4 +22,5 @@ urlpatterns = [
     path("meetups/", views.meetups, name="meetups"),
     path("hotwater/", views.hotwater, name="hotwater"),
     path("party/", views.party, name="party"),
+    path("manuals/", views.manuals, name="manuals"),
 ]
