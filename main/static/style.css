@@ -207,6 +207,14 @@ a:focus {
     background: var(--link-color);
 }
 
+header {
+    text-align: center;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px;
+}
+
 nav {
     margin-left: auto;
     margin-right: auto;
