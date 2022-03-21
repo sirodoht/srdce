@@ -4,45 +4,11 @@
 
 {% block content %}
 <nav>
-    <div class="nav-left">
-        <a href="{% url 'rota' previous %}">&larr; past</a>
-    </div>
-    <div class="nav-main">
-        <a href="{% url 'rota' current %}" class="nav-main-big {% if is_todays %}modifier-currrent{% endif %}">
-            {{ current|date:"M j" }} – {{ current_endweek|date:"M j" }}
-        </a>
-    </div>
-    <div class="nav-right">
-        <a href="{% url 'rota' next %}">future &rarr;</a>
-    </div>
-</nav>
-
-<main>
-    <div class="main-today">
-        {% if not is_todays %}
-        <a href="{% url 'rota' todays %}" class="main-today-small">
-            (go to current week)
-        </a>
-        {% endif %}
-    </div>
-    {% for a in assignments %}
-    <div class="main-item">
-        <div class="main-item-left">{{ a.mate.name }}</div>
-        <div class="main-item-right">{{ a.job.title }}</div>
-    </div>
-    {% empty %}
-    <div class="main-empty">
-        No cleaning rota for this week – just dirty.
-    </div>
-    {% endfor %}
-</main>
-
-<footer>
-    <a href="#">Print</a>
-    | <a href="{% url 'specifications' %}">Specifications</a>
+    <a href="{% url 'specifications' %}">Specifications</a>
     | <a href="{% url 'wifi' %}">WiFi</a>
     | <a href="{% url 'hotwater' %}">Hot water</a>
     | <a href="{% url 'meetups' %}">Meetups</a>
     | <a href="{% url 'manuals' %}">Manuals</a>
-</footer>
+    | <a href="/party/">Party</a>
+</nav>
 {% endblock %}
