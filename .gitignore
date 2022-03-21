@@ -1,4 +1,16 @@
-venv/
-.env
+# python
 *.pyc
-_static/
+venv/
+
+# environment
+.envrc
+.direnv/
+.pyenv/
+postgres-data/
+
+# generated static
+/static/
+
+# testing
+.coverage
+htmlcov/
