@@ -123,8 +123,6 @@ TIME_ZONE = "UTC"
 
 USE_I18N = False
 
-USE_L10N = False
-
 USE_TZ = False
 
 
@@ -158,3 +156,9 @@ EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = "Heartfort Foundation <srdce@heartfort.com>"
 SERVER_EMAIL = "Serverius Djangus <server@heartfort.com>"
 EMAIL_SUBJECT_PREFIX = "[srdce] "
+
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
