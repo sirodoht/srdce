@@ -209,7 +209,7 @@ a:focus {
 
 header {
     text-align: center;
-    width: 500px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 12px;
