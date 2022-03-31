@@ -193,6 +193,13 @@ body {
     line-height: 1.5;
 }
 
+@media(max-width: 540px) {
+    body {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
 a {
     color: var(--link-color);
     text-decoration: none;
