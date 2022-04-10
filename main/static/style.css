@@ -350,6 +350,10 @@ input[type="submit"] {
     margin-top: 16px;
 }
 
+ul {
+    padding-left: 16px;
+}
+
 footer {
     text-align: center;
     margin-top: 32px;
