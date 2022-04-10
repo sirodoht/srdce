@@ -358,3 +358,13 @@ footer {
 footer a {
     white-space: nowrap;
 }
+
+.specs label {
+    display: block;
+    margin: auto;
+}
+
+.specs input {
+    display: inline-block;
+    margin-right: 8px;
+}
