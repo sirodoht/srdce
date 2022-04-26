@@ -220,8 +220,8 @@ def hotwater(request):
     return render(request, "main/hotwater.html")
 
 
-def party(request):
-    return render(request, "main/party.html")
+def xmas_party_2021(request):
+    return render(request, "main/xmas-party-2021.html")
 
 
 def manuals(request):
