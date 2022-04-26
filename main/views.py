@@ -224,6 +224,10 @@ def xmas_party_2021(request):
     return render(request, "main/party-xmas-2021.html")
 
 
+def party_may_2022(request):
+    return render(request, "main/party-may-2022.html")
+
+
 def manuals(request):
     return render(request, "main/manuals.html")
 

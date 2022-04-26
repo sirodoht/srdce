@@ -1,0 +1,243 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Heartfort Summer Jam</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{% static 'party-may-2022/assets/css/main.css' %}" />
+	<noscript>
+		<link rel="stylesheet" href="{% static 'party-may-2022/assets/css/noscript.css' %}" />
+	</noscript>
+</head>
+
+<body class="index is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1 id="logo"><a href="index.html">Some Summer Madness <span>by Heart Fort</span></a></h1>
+		</header>
+
+		<!-- Banner -->
+		<section id="banner">
+
+			<!--
+						".inner" is set up as an inline-block so it automatically expands
+						in both directions to fit whatever's inside it. This means it won't
+						automatically wrap lines, so be sure to use line breaks where
+						appropriate (<br />).
+					-->
+			<div class="inner">
+
+				<header>
+					<h2>Party Time!</h2>
+				</header>
+				<p>We made the garden look nice</p>
+				<p>and we hope for good weather</p>
+				<footer>
+					<ul class="buttons stacked">
+						<li><a href="#main" class="button fit scrolly">Check the deets!</a></li>
+					</ul>
+				</footer>
+
+			</div>
+
+		</section>
+
+		<!-- Main -->
+		<article id="main">
+
+			<header class="special container">
+				<span class="icon solid fa-glass-martini"></span>
+				<h2>Come celebrate easter with us in our humble abode!
+				</h2>
+				<!-- <p>Turns out <strong>Twenty</strong> was the best I could come up with. Anyway, lame name aside,
+					<br />
+					it's minimally designed, fully responsive, built on HTML5/CSS3,
+					and, like all my stuff,
+					<br />
+					released for free under the <a href="http://html5up.net/license">Creative Commons Attribution
+						3.0</a> license. Have fun!
+				</p> -->
+			</header>
+
+			<!-- One
+			<section class="wrapper style2 container special-alt">
+				<div class="row gtr-50">
+					<div class="col-8 col-12-narrower">
+
+						<header>
+							<h2>Disclaimer</h2>
+						</header>
+						<p>We are not affiliated with any specific religion or belief</p>
+						<footer>
+							<ul class="buttons">
+								<li><a href="#" class="button">Find Out More</a></li>
+							</ul>
+						</footer>
+
+					</div>
+					<div class="col-4 col-12-narrower imp-narrower">
+
+						<ul class="featured-icons">
+							<li><span class="icon fa-clock"><span class="label">Feature 1</span></span></li>
+							<li><span class="icon solid fa-volume-up"><span class="label">Feature 2</span></span></li>
+							<li><span class="icon solid fa-laptop"><span class="label">Feature 3</span></span></li>
+							<li><span class="icon solid fa-inbox"><span class="label">Feature 4</span></span></li>
+							<li><span class="icon solid fa-lock"><span class="label">Feature 5</span></span></li>
+							<li><span class="icon solid fa-cog"><span class="label">Feature 6</span></span></li>
+						</ul>
+
+					</div>
+				</div>
+			</section> -->
+
+			<!-- Two -->
+			<section class="wrapper style1 container special">
+				<div class="row">
+					<div class="col-4 col-12-narrower">
+
+						<section>
+							<span class="icon solid featured fa-calendar-day"></span>
+							<header>
+								<h3>When</h3>
+							</header>
+							<p>The party will take place Saturday 28th of May. We will start around 18:00</p>
+							<p>As always, a <a
+									href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MDQ1NTdzMjhkdDF0bnExOXJyNDdsc3Fla3IgOWppcmE3NnVkYmtuN201YzZxODliNHNpZjBAZw&tmsrc=9jira76udbkn7m5c6q89b4sif0%40group.calendar.google.com">
+									Google Calendar event</a> for your convenience, and for the hipsters out there, <a
+									href="{% static 'party/party.ics' %}">here's the iCal</a> too.</p>
+						</section>
+
+					</div>
+					<div class="col-4 col-12-narrower">
+
+						<section>
+							<span class="icon solid featured fa-map-marker"></span>
+							<header>
+								<h3>Where</h3>
+							</header>
+							<p>At our Fort of course! The address is <a href="https://goo.gl/maps/hVicvKGitg2cTprz5">64
+									Hertford Rd, N1 5AE</a>.</p>
+						</section>
+
+					</div>
+					<div class="col-4 col-12-narrower">
+
+						<section>
+							<span class="icon solid featured fa-carrot"></span>
+							<header>
+								<h3>Dress Code</h3>
+							</header>
+							<p>Entry will be granted to those that include an element that relates to a chicken or a
+								bunny in their attire</p>
+						</section>
+
+					</div>
+				</div>
+			</section>
+
+			<!-- Three -->
+			<!-- <section class="wrapper style3 container special">
+
+				<header class="major">
+					<h2>Potential activities that will take place</h2>
+				</header>
+
+				<div class="row">
+					<div class="col-6 col-12-narrower">
+
+						<section>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3>A Really Fast Train</h3>
+							</header>
+							<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper
+								sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit
+								lorem ipsum dolore.</p>
+						</section>
+
+					</div>
+					<div class="col-6 col-12-narrower">
+
+						<section>
+							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<header>
+								<h3>An Airport Terminal</h3>
+							</header>
+							<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper
+								sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit
+								lorem ipsum dolore.</p>
+						</section>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6 col-12-narrower">
+
+						<section>
+							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<header>
+								<h3>Hyperspace Travel</h3>
+							</header>
+							<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper
+								sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit
+								lorem ipsum dolore.</p>
+						</section>
+
+					</div>
+					<div class="col-6 col-12-narrower">
+
+						<section>
+							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<header>
+								<h3>And Another Train</h3>
+							</header>
+							<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper
+								sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit
+								lorem ipsum dolore.</p>
+						</section>
+
+					</div>
+				</div>
+
+				<footer class="major">
+					<ul class="buttons">
+						<li><a href="#" class="button">See More</a></li>
+					</ul>
+				</footer>
+
+			</section> -->
+
+		</article>
+
+
+
+		<!-- Footer -->
+		<footer id="footer">
+
+			<ul class="copyright">
+				<li>&copy; The Heart Fort. All rights reserved.</li>
+				<li>Made with <span class="icon fa-heart accent2"></span> by the Heart Fort IT crowd</li>
+			</ul>
+
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{% static 'party-may-2022/assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'party-may-2022/assets/js/jquery.dropotron.min.js' %}"></script>
+	<script src="{% static 'party-may-2022/assets/js/jquery.scrolly.min.js' %}"></script>
+	<script src="{% static 'party-may-2022/assets/js/jquery.scrollex.min.js' %}"></script>
+	<script src="{% static 'party-may-2022/assets/js/browser.min.js' %}"></script>
+	<script src="{% static 'party-may-2022/assets/js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'party-may-2022/assets/js/util.js' %}"></script>
+	<script src="{% static 'party-may-2022/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
