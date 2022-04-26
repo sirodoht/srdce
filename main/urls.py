@@ -20,6 +20,6 @@ urlpatterns = [
     path("wifi/", views.wifi, name="wifi"),
     path("meetups/", views.meetups, name="meetups"),
     path("hotwater/", views.hotwater, name="hotwater"),
-    path("xmas-party-2021/", views.xmas_party_2021, name="party"),
+    path("xmas-party-2021/", views.xmas_party_2021, name="xmas-party-2021"),
     path("manuals/", views.manuals, name="manuals"),
 ]
