@@ -8,19 +8,84 @@
     <title>Heart Fort Party: Ancient Greek Edition</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'party-oct-2022/style.css' %}">
+    <link href="https://fonts.bunny.net/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
+        <img class="psi" src="{% static 'party-oct-2022/psi.svg' %}">
         <h1>Heart Fort Party: Ancient Greek Edition</h1>
     </header>
 
     <section>
         <h2>Rules</h2>
+        <div class="rules">
+            <div class="rules-item">
+                1. You need a costume!
+            </div>
+            <div class="rules-item">
+                2. We drink
+                <a href="https://history.stackexchange.com/questions/7634/why-did-greeks-and-romans-dilute-their-wine">watered-down</a>
+                wine!
+            </div>
+        </div>
 
+        <h2>DateTime</h2>
+        <div class="datetime">
+            <a href="{% static 'party-oct-2022/party.ics' %}">October 8th, 2022 — 7pm</a>
+        </div>
+
+        <h2>Location</h2>
+        <div class="location">
+             51°32'25.0"N 0°04'41.6"W 
+             <br>aka
+             <a href="https://goo.gl/maps/Vrn1YQK5t29sHBV5A">64 Hertford Road, N1 5AE</a>
+        </div>
+
+        <h2>FAQ</h2>
+        <div class="faq">
+            <p>
+                – Are costumes mandatory?
+                <br>– Yes.
+            </p>
+            <p>
+                – What if I don’t have a costume?
+                <br>– <a href="https://www.amazon.co.uk/dp/B07JJKDSDM/">Here you go!</a>
+            </p>
+            <p>
+                – What if I show up without a costume?
+                <br>– Entry denied!
+            </p>
+            <p>
+                – What if I show up without a costume but have it with me?
+                <br>– That’s fine, you can wear it here.
+            </p>
+            <p>
+                – What if I show up without a costume but stay only for a drink outside?
+                <br>– No drinks without costumes!
+            </p>
+            <p>
+                – What if I don’t want to drink watered-down wine?
+                <br>– That’s fine, drink tsipouro.
+            </p>
+            <p>
+                – What if I don’t want to drink tsipouro either?
+                <br>– That’s fine, you can drink whatever you want.
+            </p>
+            <p>
+                – But why are you strict with dress code and not with drink code?
+                <br>– Costumes mandatory, no excuses!
+            </p>
+        </div>
     </section>
 
     <footer>
+        <div class="footer-text">
+            <span class="footer-text-title">DALL·E × Heartfort</span>
+            <br>
+            a cult in london called heartfort composed of six people
+        </div>
+        <img src="{% static 'party-oct-2022/dalle.png' %}">
     </footer>
 
 </body>

@@ -150,10 +150,13 @@ summary {
 :root {
     --blue: #0e9aff;
     --gold: #ffd700;
+    --orange: #ee742b;
+    --serif: 'EB Garamond', serif;
 }
 
 html,
 body {
+    font-family: var(--serif);
 }
 
 header {
@@ -162,20 +165,176 @@ header {
     color: #fff;
     text-align: center;
 }
+@media (max-width: 500px) {
+    header {
+        padding: 0;
+    }
+}
 
 h1 {
     font-size: 58px;
 }
+@media (max-width: 500px) {
+    h1 {
+        font-size: 40px;
+        padding-bottom: 32px;
+    }
+}
 
 h2 {
+    display: inline-block;
     color: var(--gold);
     font-size: 42px;
     text-transform: uppercase;
     border: 10px solid var(--gold);
     padding: 8px 32px;
-    display: inline-block;
+    margin-top: 128px;
+}
+@media (max-width: 500px) {
+    h2 {
+        margin-top: 64px;
+        font-size: 32px;
+        border-width: 6px;
+    }
 }
 
 section {
     text-align: center;
 }
+
+.psi {
+    max-width: 500px;
+    margin-top: 32px;
+}
+@media (max-width: 500px) {
+    .psi {
+        width: 70vw;
+    }
+}
+
+.rules {
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 500px) {
+    .rules {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.rules-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 36px;
+    color: var(--orange);
+    border: 4px solid var(--orange);
+    width: 300px;
+    height: 150px;
+    justify-content: center;
+}
+@media (max-width: 500px) {
+    .rules-item {
+        width: 300px;
+        height: 150px;
+        margin-bottom: 16px;
+    }
+}
+
+.rules-item:nth-child(odd) {
+    margin-right: 32px;
+}
+@media (max-width: 500px) {
+    .rules-item:nth-child(odd) {
+        margin-right: 0;
+    }
+}
+
+.rules-item a {
+    color: var(--orange);
+}
+
+.datetime {
+    font-size: 36px;
+    color: var(--orange);
+    padding-left: 8px;
+    padding-right: 8px;
+}
+@media (max-width: 500px) {
+    .datetime {
+        font-size: 28px;
+    }
+}
+
+.datetime a {
+    color: var(--orange);
+}
+
+.location {
+    font-size: 36px;
+    line-height: 1.5;
+    color: var(--orange);
+    padding-left: 8px;
+    padding-right: 8px;
+}
+@media (max-width: 500px) {
+    .location {
+        font-size: 28px;
+    }
+}
+
+.location a {
+    color: var(--orange);
+}
+
+.faq {
+    font-size: 26px;
+    line-height: 1.2;
+    text-align: left;
+    color: var(--orange);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 500px) {
+    .faq {
+        font-size: 22px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+.faq a {
+    color: var(--orange);
+}
+
+footer {
+    text-align: center;
+    margin-top: 128px;
+}
+
+.footer-text {
+    font-size: 32px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+@media (max-width: 500px) {
+    .footer-text {
+        font-size: 26px;
+    }
+}
+
+.footer-text-title {
+    color: #aaa;
+    font-family: sans-serif;
+}
+
+footer img {
+    max-width: 500px;
+}
+@media (max-width: 500px) {
+    footer img {
+        width: 100%;
+    }
+}
+
