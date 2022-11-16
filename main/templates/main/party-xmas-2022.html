@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>A HeartFort Christmas!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{% static 'party-xmas-2022/assets/css/main.css' %}" />
+	{% comment %} favicon {% endcomment %}
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'party-xmas-2022/favicon/apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'party-xmas-2022/favicon/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'party-xmas-2022/favicon/favicon-16x16.png' %}">
+	<link rel="manifest" href="{% static 'party-xmas-2022/favicon/site.webmanifest' %}">
+	<link rel="mask-icon" href="{% static 'party-xmas-2022/favicon/safari-pinned-tab.svg" color="#5bbad5' %}">
+	<link rel="shortcut icon" href="{% static 'party-xmas-2022/favicon/favicon.ico' %}">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="{% static 'party-xmas-2022/favicon/browserconfig.xml' %}">
+	<meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="landing is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="{% url 'xmas-party-2021' %}">Another Christmas Miracle</a> by Heart Fort</h1>
+		</header>
+
+		<!-- Banner -->
+		<section id="banner">
+			<h2>Christmas Party!</h2>
+			<p>Come celebrate the holiday season with us</p>
+			<ul class="actions special">
+				<li><a href="#main" class="button primary">Don't mind if I do!</a>
+			</ul>
+		</section>
+
+		<!-- Main -->
+		<section id="main" class="container">
+
+			<section class="box special">
+				<header class="major">
+					<h2>Naughty? Nice? No problem!
+					</h2>
+					<p>An inclusive party regardless of your performance in niceness during the year. <br />Bring yourself, your good mood, your +1, and let's celebrate together! <br />Sincerely, the Heart Fort (Chryssa, Martin, Orfeas, Theodore, Vici, Zuzana)</p>
+				</header>
+
+			</section>
+
+			<section class="box special features">
+				<div class="features-row">
+					<section>
+						<span class="icon solid major fa-calendar-day accent3"></span>
+						<h3>When</h3>
+						<p>The party will take place Saturday 2nd of December at 21:00.</p>
+						<p>As always, a <a href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NjFvbXVob2owcWxlbjg5ZzloNG9zZ2FuN20gOWppcmE3NnVkYmtuN201YzZxODliNHNpZjBAZw&tmsrc=9jira76udbkn7m5c6q89b4sif0%40group.calendar.google.com"> Google Calendar event</a> for your convenience, and <a href="{% static 'party-xmas-2022/party.ics' %}">here's the iCal</a> too.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-tshirt accent2"></span>
+						<h3>Dress Code</h3>
+						<p>Fancy! Let's put our nice clothes, and remember to wear a piece of <strong><span style="color: red">red</span></strong> clothing!</p>
+					</section>
+				</div>
+				<div class="features-row">
+					<section>
+						<span class="icon solid major fa-map-marker-alt accent4"></span>
+						<h3>Where</h3>
+						<p>At our house of course! The address is <a href="https://goo.gl/maps/hVicvKGitg2cTprz5">64 Hertford Rd, N1 5AE</a>.</p>
+					</section>
+					{% comment %} <section>
+						<span class="icon solid major fa-biohazard accent5"></span>
+						<h3>Covid</h3>
+						<p><strong>Update: </strong>Seeing as most of us will be travelling for the holidays, we will require from everyone attending the party to take a rapid test and informing us about the negative result before coming. <br />
+						If someone doesn't have any handy, we will also have a few spare ones to take your test here, we got you covered 😊
+						</p> {% endcomment %}
+					</section>
+				</div>
+			</section>
+
+			<section class="box special">
+				<header class="major">
+					<h2>We can't wait to see you!
+					</h2>
+				</header>
+				<span class="image featured"><img src="{% static 'party-xmas-2022/images/the-office-bottles.jpg'%}" alt="" /></span>
+			</section>
+
+		</section>
+
+
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="copyright">
+				<li>&copy; The Heart Fort. All rights reserved.</li>
+				<li>Made with <span class="icon fa-heart accent2"></span> by the Heart Fort IT crowd</a>
+				</li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{% static 'party-xmas-2022/assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'party-xmas-2022/assets/js/jquery.dropotron.min.js' %}"></script>
+	<script src="{% static 'party-xmas-2022/assets/js/jquery.scrollex.min.js' %}"></script>
+	<script src="{% static 'party-xmas-2022/assets/js/browser.min.js' %}"></script>
+	<script src="{% static 'party-xmas-2022/assets/js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'party-xmas-2022/assets/js/util.js' %}"></script>
+	<script src="{% static 'party-xmas-2022/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
