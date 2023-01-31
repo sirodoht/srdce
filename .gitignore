@@ -16,4 +16,4 @@ postgres-data/
 htmlcov/
 
 # env
-.env
+.envrc
