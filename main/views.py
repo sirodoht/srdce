@@ -220,11 +220,11 @@ def hotwater(request):
     return render(request, "main/hotwater.html")
 
 
-def xmas_party_2021(request):
+def party_xmas_2021(request):
     return render(request, "main/party-xmas-2021.html")
 
 
-def xmas_party_2022(request):
+def party_xmas_2022(request):
     return render(request, "main/party-xmas-2022.html")
 
 
@@ -234,6 +234,10 @@ def party_may_2022(request):
 
 def party_oct_2022(request):
     return render(request, "main/party-oct-2022.html")
+
+
+def party_feb_2023(request):
+    return render(request, "main/party-feb-2023.html")
 
 
 def manuals(request):

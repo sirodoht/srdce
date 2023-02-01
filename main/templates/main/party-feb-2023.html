@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Heartfort Celebrating Life v.2023</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'party-feb-2023/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@400&family=Explora&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-imgcontainer">
+            <img src="{% static 'party-feb-2023/heart.svg' %}" alt="heart illustration">
+        </div>
+    </header>
+
+    <div class="invitation">
+        <h1>Heartfort Celebrating Life v.2023</h1>
+
+        <section class="datetime">
+            <a href="{% static 'party-feb-2023/party.ics' %}">Friday, February 24th, 2023 — 9pm</a>
+        </section>
+
+        <div class="title">The White Lotus Edition</div>
+
+        <section class="lotus">
+            <div class="lotus-imgcontainer">
+                <img src="{% static 'party-feb-2023/lotus.svg' %}" alt="lotus flower">
+            </div>
+        </section>
+    </div>
+
+    <h2 class="location-title">Location</h2>
+    <section class="location">
+        <div class="location-rect">
+            51°32'25.0"N 0°04'41.6"W
+            <br>
+            <a href="https://goo.gl/maps/Vrn1YQK5t29sHBV5A">64 Hertford Road, N1 5AE</a>
+        </div>
+    </section>
+
+    <section class="drinks">
+        <p>Join us, for totally awesome drinks, like this totally real one...</p>
+        <div class="drinks-imgcontainer">
+            <img src="{% static 'party-feb-2023/drink.png' %}" alt="drinks">
+        </div>
+    </section>
+
+    <section class="guests">
+        <p>...and, for meeting totally awesome guests, like Orange Levitt — a definitely existing person.</p>
+        <div class="guests-imgcontainer">
+            <img src="{% static 'party-feb-2023/guest.jpg' %}" alt="guest">
+        </div>
+    </section>
+
+
+    <footer>&lt;3</footer>
+
+</body>
+</html>

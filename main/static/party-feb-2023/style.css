@@ -1,0 +1,444 @@
+/* reset */
+html {
+    /* fix line height in all browsers */
+    line-height: 1.15;
+    /* prevent adjustments of font size after orientation changes in iOS */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    /* remove margin in all browsers */
+    margin: 0;
+}
+
+hr {
+    /* fix height in Firefox */
+    height: 0;
+    /* fix inheritance of border color in Firefox */
+    color: inherit;
+}
+
+abbr[title] {
+    /* fix text decoration in Chrome, Edge, Safari. */
+    text-decoration: underline dotted;
+}
+
+b,
+strong {
+    /* fix font weight in Edge and Safari */
+    font-weight: bolder;
+}
+
+code,
+kbd,
+samp,
+pre {
+    /* improve consistency of default fonts in all browsers */
+    font-family: monospace;
+    /* correct the odd 'em' font sizing in all browsers */
+    font-size: 1em;
+}
+
+small {
+    /* fix font size in all browsers */
+    font-size: 80%;
+}
+
+/* prevent sub and sup from affecting the line height in all browsers */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+table {
+    /* remove text indentation from table contents in Chrome and Safari */
+    text-indent: 0;
+    /* fix table border color inheritance in Chrome and Safari */
+    border-color: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    /* fix font styles in all browsers */
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    /* remove margin in Firefox and Safari */
+    margin: 0;
+}
+
+button,
+select {
+    /* remove inheritance of text transform in Edge and Firefox */
+    text-transform: none;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+    /* fix inability to style clickable types in iOS and Safari */
+    -webkit-appearance: button;
+}
+
+/* remove inner border and padding in Firefox */
+::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+:-moz-focusring {
+    /* restore focus styles unset by the previous rule */
+    outline: 1px dotted ButtonText;
+}
+
+:-moz-ui-invalid {
+    /* remove additional ':invalid' styles in Firefox */
+    box-shadow: none;
+}
+
+progress {
+    /* fix vertical alignment in Chrome and Firefox */
+    vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    /* fix cursor style of increment and decrement buttons in Safari */
+    height: auto;
+}
+
+[type='search'] {
+    /* fix appearance in Chrome and Safari */
+    -webkit-appearance: textfield;
+    /* fix outline in Safari */
+    outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+    /* remove inner padding in Chrome and Safari on macOS */
+    -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+    /* fix inability to style clickable types in iOS and Safari */
+    -webkit-appearance: button;
+    /* change font properties to 'inherit' in Safari. */
+    font: inherit;
+}
+
+summary {
+    /* fix display in Chrome and Safari */
+    display: list-item;
+}
+
+/* general */
+:root {
+    --red-900: #ef233c;
+    --red-800: #ff4456;
+    --red-400: #ff7784;
+    --red-300: #ff909b;
+    --offwhite-300: #ffd8a4;
+    --offwhite-500: #ffb450;
+}
+
+html,
+body {
+    font-family: 'Martel', serif;
+}
+
+a {
+    text-decoration: underline dotted;
+    color: var(--offwhite-500);
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0.5rem 1rem 0.2rem;
+    transition: text-decoration 0.1s linear;
+}
+@media (max-width: 600px) {
+    a {
+        font-size: 24px;
+    }
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline var(--red-900);
+}
+
+header {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 16rem;
+    margin-bottom: -8rem;
+}
+
+.header-imgcontainer {
+    color: #fff;
+    text-align: center;
+    padding: 4rem;
+    border-bottom: 8rem solid var(--red-300);
+    box-shadow:
+        rgba(255, 144, 155, 0.4) -30px 30px,
+        rgba(255, 144, 155, 0.2) -60px 60px,
+        rgba(255, 144, 155, 0.05) -90px 90px;
+    width: 200vw;
+    transform: rotate(5deg);
+}
+
+.header-imgcontainer img {
+    max-width: 500px;
+    margin-top: 32px;
+    transform: rotate(-5deg);
+}
+@media (max-width: 600px) {
+    .header-imgcontainer img {
+        width: 60vw;
+    }
+}
+
+h1 {
+    font-size: 58px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--offwhite-300);
+    font-weight: 700;
+    transform: rotate(5deg);
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--offwhite-300);
+}
+@media (max-width: 600px) {
+    h1 {
+        font-size: 38px;
+    }
+}
+
+.title {
+    font-size: 90px;
+    text-align: center;
+    color: var(--red-400);
+    transform: rotate(5deg);
+    font-family: 'Explora';
+    margin-top: 4rem;
+    animation: glow 1.5s ease-in infinite alternate;
+}
+@media (max-width: 600px) {
+    .title {
+        font-size: 70px;
+    }
+}
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 15px #ff909b,
+            0 0 20px #ff909b,
+            0 0 25px #ff909b,
+            0 0 30px #ff909b,
+            0 0 35px #ff909b;
+    }
+    to {
+        text-shadow: 0 0 10px #fff,
+            0 0 15px #ffcee6,
+            0 0 40px #ffcee6,
+            0 0 50px #ffcee6,
+            0 0 60px #ffcee6,
+            0 0 70px #ffcee6,
+            0 0 80px #ffcee6;
+    }
+}
+
+section {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.invitation {
+    overflow: hidden;
+}
+
+.datetime {
+    transform: rotate(5deg);
+}
+
+.datetime a {
+    text-decoration: underline dotted;
+    color: var(--offwhite-500);
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0.5rem 1rem 0.2rem;
+    transition: border-color 0.2s linear;
+    display: inline-block;
+    border: 5px solid transparent;
+}
+@media (max-width: 600px) {
+    .datetime a {
+        font-size: 24px;
+    }
+}
+
+.datetime a:hover {
+    text-decoration: underline dotted;
+    border-color: var(--offwhite-300);
+}
+
+.datetime a:active {
+    text-decoration: underline dotted;
+    border-color: var(--offwhite-500);
+}
+
+.lotus {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 32rem;
+    padding-bottom: 16rem;
+    margin-top: -10rem;
+    margin-bottom: -6rem;
+}
+
+.lotus-imgcontainer {
+    color: #fff;
+    text-align: center;
+    padding: 8rem;
+    width: 200vw;
+    transform: rotate(5deg);
+    background-color: var(--red-300);
+    margin-top: -12rem;
+    box-shadow:
+        rgba(255, 144, 155, 0.4) 30px -30px,
+        rgba(255, 144, 155, 0.2) 60px -60px,
+        rgba(255, 144, 155, 0.05) 90px -90px;
+}
+
+.lotus-imgcontainer img {
+    max-width: 800px;
+    transform: rotate(-5deg);
+}
+@media (max-width: 600px) {
+    .lotus-imgcontainer img {
+        width: 90vw;
+    }
+}
+
+.location {
+    font-size: 30px;
+    line-height: 2;
+    padding-bottom: 10rem;
+}
+@media (max-width: 600px) {
+    .location {
+        font-size: 24px;
+    }
+}
+
+.location-title {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    color: var(--red-400);
+    text-align: center;
+}
+
+.location-rect {
+    display: inline-block;
+    padding: 2rem 4rem;
+    border: 5px solid var(--red-300);
+    color: var(--offwhite-500);
+    box-sizing: border-box;
+}
+@media (max-width: 600px) {
+    .location-rect {
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+}
+
+.drinks {
+    color: #fff;
+    background-color: rgb(13, 7, 8);
+}
+
+.drinks p {
+    font-size: 20px;
+    padding-top: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.drinks-imgcontainer {
+    text-align: center;
+    padding: 2rem 8rem 8rem;
+}
+@media (max-width: 600px) {
+    .drinks-imgcontainer {
+        padding: 2rem 0 8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .drinks-imgcontainer img {
+        width: 100%;
+    }
+}
+
+.guests {
+    color: #fff;
+    background-color: rgb(16, 23, 16);
+}
+
+.guests p {
+    padding-top: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.guests-imgcontainer {
+    text-align: center;
+    padding: 2rem 8rem 8rem;
+}
+@media (max-width: 600px) {
+    .guests-imgcontainer {
+        padding: 2rem 0 8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .guests-imgcontainer img {
+        width: 100%;
+    }
+}
+
+footer {
+    margin-top: 4rem;
+    border-bottom: 8px solid var(--red-300);
+    font-family: monospace;
+    font-size: 30px;
+    text-align: center;
+    color: var(--red-400);
+    padding-bottom: 2rem;
+}
