@@ -28,9 +28,9 @@ dependencies management.
 
 ### Environment variables
 
-You need to create a new file named `.env` in the root of this project once you cloned it.
+You need to create a new file named `.envrc` in the root of this project once you cloned it.
 
-`.env` should contain the following env variables:
+`.envrc` should contain the following env variables:
 ```
 SECRET_KEY="thisisthesecretkey"
 DATABASE_URL="postgres://srdce@127.0.0.1:5432/srdce"
@@ -47,7 +47,7 @@ NODEBUG=1
 ### Database
 
 This project uses PostgreSQL. See above on how to configure it using the
-`.env` file.
+`.envrc` file.
 
 After creating your local database, you need to create the schema and apply
 the migrations:
