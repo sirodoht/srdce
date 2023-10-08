@@ -1,0 +1,57 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #FF4500;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+h1,
+h2 {
+    margin: 0;
+    padding: 0.5em 0;
+}
+
+main {
+    padding: 1em;
+}
+
+#details {
+    background-color: #E6E6FA;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+footer {
+    background-color: #FF4500;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+
+    h1,
+    h2 {
+        font-size: 24px;
+    }
+}
+
+#countdown {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em;
+}

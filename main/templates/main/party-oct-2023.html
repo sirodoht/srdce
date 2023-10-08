@@ -1,27 +1,33 @@
 {% load static %}
 
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Back to school Party</title>
-</head>
-
-<body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Party</title>
+    <link rel="stylesheet" href="{% static 'party-oct-2023/styles.css' %}" />
+  </head>
+  <body>
     <header>
-        <h1>Heart Fort Party: Back to School Edition</h1>
+      <h1>End of Summer House Party</h1>
     </header>
-
-    <section>
-        <h2>When</h2>
-        <p>October 20th, 2022 — 7pm</p>
-
-        <h2>Location</h2>
+    <main>
+      <div id="countdown"></div>
+      <section id="details">
+        <h2>Party Details</h2>
+        <p>Date: October 20, 2023</p>
         <p>
-             51°32'25.0"N 0°04'41.6"W
-             <br>aka
-             <a href="https://goo.gl/maps/Vrn1YQK5t29sHBV5A">64 Hertford Road, N1 5AE</a>
+          Time: 19:00 (<a href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGptb2cwbm9tamJjaDBrMGRsMnN2dXNpZjQgOWppcmE3NnVkYmtuN201YzZxODliNHNpZjBAZw&tmsrc=9jira76udbkn7m5c6q89b4sif0%40group.calendar.google.com">Google calendar</a>, <a href="{% static 'party-oct-2023/invite.ics' %}">iCal</a>)
         </p>
-
-</body>
+        <p>
+          Address: <a href="https://goo.gl/maps/Vrn1YQK5t29sHBV5A">64 Hertford Road, N1 5AE</a>
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>See you there!</p>
+    </footer>
+    <script src="{% static 'party-oct-2023/script.js' %}"></script>
+  </body>
 </html>
