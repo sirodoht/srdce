@@ -96,6 +96,34 @@ h2 {
     line-height: 1.6;
 }
 
+.calendar-buttons {
+    text-align: center;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.calendar-button {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(11, 122, 117, 0.75);
+    color: var(--white);
+    min-width: 270px;
+}
+
+.calendar-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background-color: rgba(9, 102, 97, 0.9);
+}
+
 footer {
     text-align: center;
     font-weight: 600;
