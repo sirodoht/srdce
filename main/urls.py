@@ -27,6 +27,7 @@ urlpatterns = [
     path("party-oct-2023/", views.party_oct_2023, name="party-oct-2023"),
     path("party-feb-2023/", views.party_feb_2023, name="party-feb-2023"),
     path("party-apr-2025/", views.party_apr_2025, name="party-apr-2025"),
-    path("party/", views.party_apr_2025, name="party-apr-2025"),
+    path("party-jan-2026/", views.party_jan_2026, name="party-jan-2026"),
+    path("party/", views.party_jan_2026, name="party"),
     path("manuals/", views.manuals, name="manuals"),
 ]
