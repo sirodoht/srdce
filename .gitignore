@@ -1,17 +1,12 @@
+# database
+db.sqlite3
+
 # python
 *.pyc
-.venv/
 
 # environment
 .envrc
-postgres-data/
+.venv/
 
 # generated static
 /static/
-
-# testing
-.coverage
-htmlcov/
-
-# env
-.envrc
