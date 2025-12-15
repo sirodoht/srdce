@@ -10,6 +10,485 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const snowflakes = document.querySelectorAll('.snowflake');
+            let snowflakeBurstCount = 0;
+            const burstThreshold = 5;
+
+            // Snowflake configuration data
+            const snowflakeConfigs = [
+                { left: '1.5%', startY: -8, duration: 45, size: '2rem' },
+                { left: '4.5%', startY: 12, duration: 55, size: '3rem' },
+                { left: '7.5%', startY: -12, duration: 65, size: '2.2rem' },
+                { left: '10.5%', startY: 28, duration: 50, size: '2.7rem' },
+                { left: '13.5%', startY: -18, duration: 70, size: '2.4rem' },
+                { left: '16.5%', startY: 42, duration: 60, size: '2.9rem' },
+                { left: '19.5%', startY: -5, duration: 55, size: '2rem' },
+                { left: '22.5%', startY: 58, duration: 75, size: '3.2rem' },
+                { left: '25.5%', startY: -15, duration: 45, size: '2.2rem' },
+                { left: '28.5%', startY: 18, duration: 65, size: '2.5rem' },
+                { left: '31.5%', startY: 72, duration: 60, size: '3rem' },
+                { left: '34.5%', startY: -22, duration: 50, size: '2rem' },
+                { left: '37.5%', startY: 32, duration: 70, size: '2.7rem' },
+                { left: '40.5%', startY: 88, duration: 55, size: '2.4rem' },
+                { left: '43.5%', startY: -8, duration: 65, size: '2.9rem' },
+                { left: '46.5%', startY: 48, duration: 45, size: '2.2rem' },
+                { left: '49.5%', startY: -20, duration: 75, size: '3.2rem' },
+                { left: '52.5%', startY: 62, duration: 60, size: '2.5rem' },
+                { left: '55.5%', startY: -12, duration: 50, size: '2rem' },
+                { left: '58.5%', startY: 22, duration: 70, size: '2.7rem' },
+                { left: '61.5%', startY: 78, duration: 55, size: '2.4rem' },
+                { left: '64.5%', startY: -18, duration: 65, size: '3rem' },
+                { left: '67.5%', startY: 52, duration: 45, size: '2.2rem' },
+                { left: '70.5%', startY: -10, duration: 75, size: '2.9rem' },
+                { left: '73.5%', startY: 38, duration: 60, size: '2.5rem' },
+                { left: '76.5%', startY: 92, duration: 50, size: '2rem' },
+                { left: '79.5%', startY: -15, duration: 70, size: '3.2rem' },
+                { left: '82.5%', startY: 68, duration: 55, size: '2.4rem' },
+                { left: '85.5%', startY: -7, duration: 65, size: '2.7rem' },
+                { left: '88.5%', startY: 82, duration: 45, size: '2.2rem' },
+                { left: '91.5%', startY: -25, duration: 52, size: '2.1rem' },
+                { left: '94.5%', startY: 15, duration: 62, size: '2.8rem' },
+                { left: '97.5%', startY: 55, duration: 48, size: '2.3rem' },
+                { left: '0.5%', startY: -3, duration: 68, size: '2.6rem' },
+                { left: '3.5%', startY: 35, duration: 58, size: '3.1rem' },
+                { left: '6.5%', startY: -20, duration: 72, size: '2rem' },
+                { left: '9.5%', startY: 65, duration: 46, size: '2.8rem' },
+                { left: '12.5%', startY: -8, duration: 66, size: '2.4rem' },
+                { left: '15.5%', startY: 25, duration: 54, size: '3rem' },
+                { left: '18.5%', startY: 75, duration: 74, size: '2.2rem' },
+                { left: '21.5%', startY: -12, duration: 50, size: '2.9rem' },
+                { left: '24.5%', startY: 45, duration: 64, size: '2.5rem' },
+                { left: '27.5%', startY: -18, duration: 56, size: '3.2rem' },
+                { left: '30.5%', startY: 85, duration: 70, size: '2.1rem' },
+                { left: '33.5%', startY: -5, duration: 48, size: '2.7rem' },
+                { left: '36.5%', startY: 55, duration: 62, size: '2.3rem' },
+                { left: '39.5%', startY: -22, duration: 58, size: '3rem' },
+                { left: '42.5%', startY: 70, duration: 72, size: '2.6rem' },
+                { left: '45.5%', startY: -10, duration: 46, size: '2.4rem' },
+                { left: '48.5%', startY: 28, duration: 66, size: '2.8rem' },
+                { left: '51.5%', startY: 88, duration: 54, size: '2.2rem' },
+                { left: '54.5%', startY: -15, duration: 74, size: '3.1rem' },
+                { left: '57.5%', startY: 50, duration: 50, size: '2.5rem' },
+                { left: '60.5%', startY: -8, duration: 64, size: '2.9rem' },
+                { left: '63.5%', startY: 35, duration: 56, size: '2.1rem' },
+                { left: '66.5%', startY: 95, duration: 70, size: '2.7rem' },
+                { left: '69.5%', startY: -19, duration: 48, size: '3.2rem' },
+                { left: '72.5%', startY: 75, duration: 62, size: '2.3rem' },
+                { left: '75.5%', startY: -1, duration: 58, size: '2.6rem' },
+                { left: '78.5%', startY: 42, duration: 52, size: '2.4rem' },
+                { left: '81.5%', startY: 90, duration: 68, size: '2.8rem' },
+                { left: '84.5%', startY: -12, duration: 46, size: '2.2rem' },
+                { left: '87.5%', startY: 60, duration: 72, size: '2.9rem' },
+                { left: '90.5%', startY: -6, duration: 54, size: '2.5rem' },
+                { left: '93.5%', startY: 30, duration: 66, size: '2.7rem' },
+                { left: '96.5%', startY: 80, duration: 48, size: '2.1rem' },
+                { left: '99.5%', startY: -4, duration: 64, size: '2.6rem' }
+            ];
+
+            // Animate each snowflake with GSAP
+            snowflakes.forEach(function(snowflake, index) {
+                const config = snowflakeConfigs[index] || snowflakeConfigs[0];
+
+                // Set initial position and size
+                gsap.set(snowflake, {
+                    left: config.left,
+                    top: config.startY + '%',
+                    fontSize: config.size,
+                    opacity: index % 2 === 0 ? 0.5 : (index % 3 === 0 ? 0.4 : 0.7)
+                });
+
+                // Create the falling animation
+                function animateSnowflake() {
+                    const startY = config.startY;
+                    const tl = gsap.timeline({
+                        onComplete: function() {
+                            // Reset and restart
+                            gsap.set(snowflake, { top: startY + '%', rotation: 0 });
+                            animateSnowflake();
+                        }
+                    });
+
+                    tl.to(snowflake, {
+                        top: 'calc(100% + 100px)',
+                        rotation: 360,
+                        duration: config.duration,
+                        ease: 'none'
+                    });
+                }
+
+                // Start the animation
+                animateSnowflake();
+
+                // Click handler for breaking snowflakes
+                snowflake.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Kill any running GSAP animations on this element
+                    gsap.killTweensOf(snowflake);
+
+                    const rect = snowflake.getBoundingClientRect();
+                    const x = rect.left + rect.width / 2;
+                    const y = rect.top + rect.height / 2;
+                    const originalSize = parseFloat(window.getComputedStyle(snowflake).fontSize);
+
+                    // Remove the original snowflake
+                    snowflake.remove();
+
+                    // Increment burst counter and check for big burst
+                    snowflakeBurstCount++;
+                    if (snowflakeBurstCount % burstThreshold === 0) {
+                        triggerBigSnowflakeBurst();
+                    }
+
+                    // Create break indicator
+                    const tiny = document.createElement('div');
+                    tiny.className = 'snowflake-break-temp';
+                    tiny.textContent = '❄';
+                    tiny.style.left = x + 'px';
+                    tiny.style.top = y + 'px';
+                    tiny.style.fontSize = originalSize + 'px';
+                    document.body.appendChild(tiny);
+
+                    // Animate the break indicator with GSAP
+                    gsap.to(tiny, {
+                        scale: 0.3,
+                        opacity: 0,
+                        duration: 0.5,
+                        ease: 'power2.out',
+                        onComplete: function() {
+                            tiny.remove();
+                        }
+                    });
+
+                    // Create fragments
+                    createSnowflakeFragments(x, y, originalSize);
+                });
+            });
+
+            function createSnowflakeFragments(x, y, originalSize) {
+                const fragmentCount = 6;
+                const fragmentsContainer = document.createElement('div');
+                fragmentsContainer.className = 'snowflake-fragments';
+                document.body.appendChild(fragmentsContainer);
+
+                for (let i = 0; i < fragmentCount; i++) {
+                    const fragment = document.createElement('div');
+                    fragment.className = 'snowflake-fragment';
+                    fragment.textContent = '❄';
+                    fragment.style.left = x + 'px';
+                    fragment.style.top = y + 'px';
+                    fragment.style.fontSize = (originalSize * 0.5) + 'px';
+
+                    fragmentsContainer.appendChild(fragment);
+
+                    // Calculate direction and distance
+                    const angle = (Math.PI * 2 * i) / fragmentCount + (Math.random() * 0.5);
+                    const distance = 80 + Math.random() * 60;
+                    const fragmentX = Math.cos(angle) * distance;
+                    const fragmentY = Math.sin(angle) * distance + 100;
+                    const duration = 1.5 + Math.random() * 1;
+
+                    // Animate fragment with GSAP
+                    gsap.to(fragment, {
+                        x: fragmentX,
+                        y: fragmentY,
+                        opacity: 0,
+                        duration: duration,
+                        ease: 'power1.out'
+                    });
+                }
+
+                // Remove fragments container after animations complete
+                setTimeout(function() {
+                    fragmentsContainer.remove();
+                }, 2500);
+            }
+
+            function triggerBigSnowflakeBurst() {
+                // Create overlay
+                const overlay = document.createElement('div');
+                overlay.className = 'big-snowflake-overlay';
+                document.body.appendChild(overlay);
+
+                // Create big snowflake
+                const bigSnowflake = document.createElement('div');
+                bigSnowflake.className = 'big-snowflake';
+                bigSnowflake.textContent = '❄';
+                overlay.appendChild(bigSnowflake);
+
+                // Animate the big snowflake appearing
+                gsap.fromTo(bigSnowflake,
+                    { scale: 0, rotation: 0, opacity: 0 },
+                    {
+                        scale: 1,
+                        rotation: 180,
+                        opacity: 1,
+                        duration: 0.4,
+                        ease: 'back.out(1.7)',
+                        onComplete: function() {
+                            // Pause, then burst
+                            setTimeout(function() {
+                                // Burst animation
+                                gsap.to(bigSnowflake, {
+                                    scale: 3,
+                                    opacity: 0,
+                                    rotation: 360,
+                                    duration: 0.3,
+                                    ease: 'power2.out'
+                                });
+
+                                // Create many fragments
+                                createBigSnowflakeFragments(overlay);
+
+                                // Remove overlay after animations
+                                setTimeout(function() {
+                                    gsap.to(overlay, {
+                                        opacity: 0,
+                                        duration: 0.3,
+                                        onComplete: function() {
+                                            overlay.remove();
+                                        }
+                                    });
+                                }, 1000);
+                            }, 200);
+                        }
+                    }
+                );
+            }
+
+            function createBigSnowflakeFragments(overlay) {
+                // Create canvas for particle animation
+                const canvas = document.createElement('canvas');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                canvas.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:1001;';
+                document.body.appendChild(canvas);
+                const ctx = canvas.getContext('2d');
+
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                const fragmentCount = 30;
+
+                // Create particles
+                const particles = [];
+                for (let i = 0; i < fragmentCount; i++) {
+                    const angle = (Math.PI * 2 * i) / fragmentCount + (Math.random() * 0.3);
+                    const speed = 8 + Math.random() * 12;
+                    particles.push({
+                        x: centerX,
+                        y: centerY,
+                        vx: Math.cos(angle) * speed,
+                        vy: Math.sin(angle) * speed,
+                        rotation: 0,
+                        rotationSpeed: (Math.random() - 0.5) * 0.3,
+                        size: 24 + Math.random() * 32,
+                        opacity: 1
+                    });
+                }
+
+                // Animation loop
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    let anyVisible = false;
+                    particles.forEach(function(p) {
+                        if (p.opacity <= 0) return;
+                        anyVisible = true;
+
+                        p.x += p.vx;
+                        p.y += p.vy;
+                        p.vy += 0.3; // gravity
+                        p.rotation += p.rotationSpeed;
+                        p.opacity -= 0.025;
+
+                        ctx.save();
+                        ctx.translate(p.x, p.y);
+                        ctx.rotate(p.rotation);
+                        ctx.font = p.size + 'px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.globalAlpha = Math.max(0, p.opacity);
+                        ctx.fillStyle = '#ffb366';
+                        ctx.fillText('❄', 0, 0);
+                        ctx.restore();
+                    });
+
+                    if (anyVisible) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        canvas.remove();
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            // Orange animations
+            const oranges = document.querySelectorAll('.orange');
+
+            // Orange configuration data
+            const orangeConfigs = [
+                { left: '3%', startY: -10, duration: 50, size: '2rem' },
+                { left: '6%', startY: 20, duration: 60, size: '2.5rem' },
+                { left: '9%', startY: -15, duration: 55, size: '2.2rem' },
+                { left: '12%', startY: 35, duration: 65, size: '2.8rem' },
+                { left: '15%', startY: -8, duration: 48, size: '2.3rem' },
+                { left: '18%', startY: 50, duration: 70, size: '2.6rem' },
+                { left: '21%', startY: -5, duration: 52, size: '2.1rem' },
+                { left: '24%', startY: 65, duration: 58, size: '2.9rem' },
+                { left: '27%', startY: -18, duration: 62, size: '2.4rem' },
+                { left: '30%', startY: 25, duration: 45, size: '2.7rem' },
+                { left: '33%', startY: 80, duration: 68, size: '2.2rem' },
+                { left: '36%', startY: -12, duration: 54, size: '2.5rem' },
+                { left: '39%', startY: 40, duration: 72, size: '2.8rem' },
+                { left: '42%', startY: 92, duration: 50, size: '2.1rem' },
+                { left: '45%', startY: -9, duration: 64, size: '2.6rem' },
+                { left: '48%', startY: 55, duration: 56, size: '2.3rem' },
+                { left: '51%', startY: -20, duration: 66, size: '2.9rem' },
+                { left: '54%', startY: 70, duration: 48, size: '2.4rem' },
+                { left: '57%', startY: -4, duration: 58, size: '2.2rem' },
+                { left: '60%', startY: 30, duration: 70, size: '2.7rem' },
+                { left: '63%', startY: 85, duration: 52, size: '2.5rem' },
+                { left: '66%', startY: -16, duration: 62, size: '2.8rem' },
+                { left: '69%', startY: 60, duration: 46, size: '2.1rem' },
+                { left: '72%', startY: -7, duration: 68, size: '2.6rem' },
+                { left: '75%', startY: 45, duration: 54, size: '2.3rem' },
+                { left: '78%', startY: 95, duration: 60, size: '2.9rem' },
+                { left: '81%', startY: -22, duration: 50, size: '2.4rem' },
+                { left: '84%', startY: 75, duration: 66, size: '2.2rem' },
+                { left: '87%', startY: -6, duration: 56, size: '2.7rem' },
+                { left: '90%', startY: 88, duration: 48, size: '2.5rem' },
+                { left: '93%', startY: -13, duration: 64, size: '2.8rem' },
+                { left: '96%', startY: 15, duration: 58, size: '2.1rem' },
+                { left: '99%', startY: 50, duration: 72, size: '2.6rem' },
+                { left: '2%', startY: -11, duration: 46, size: '2.3rem' },
+                { left: '5%', startY: 38, duration: 62, size: '2.9rem' },
+                { left: '8%', startY: -19, duration: 52, size: '2.4rem' },
+                { left: '11%', startY: 68, duration: 68, size: '2.2rem' },
+                { left: '14%', startY: -2, duration: 54, size: '2.7rem' },
+                { left: '17%', startY: 82, duration: 60, size: '2.5rem' },
+                { left: '20%', startY: -14, duration: 56, size: '2.8rem' },
+                { left: '23%', startY: 28, duration: 48, size: '2.1rem' }
+            ];
+
+            // Animate each orange with GSAP
+            oranges.forEach(function(orange, index) {
+                const config = orangeConfigs[index] || orangeConfigs[0];
+
+                // Set initial position and size
+                gsap.set(orange, {
+                    left: config.left,
+                    top: config.startY + '%',
+                    fontSize: config.size,
+                    opacity: index % 2 === 0 ? 0.7 : (index % 3 === 0 ? 0.5 : 0.8)
+                });
+
+                // Create the falling animation
+                function animateOrange() {
+                    const startY = config.startY;
+                    const tl = gsap.timeline({
+                        onComplete: function() {
+                            // Reset and restart
+                            gsap.set(orange, { top: startY + '%', rotation: 0 });
+                            animateOrange();
+                        }
+                    });
+
+                    tl.to(orange, {
+                        top: 'calc(100% + 100px)',
+                        rotation: 360,
+                        duration: config.duration,
+                        ease: 'none'
+                    });
+                }
+
+                // Start the animation
+                animateOrange();
+
+                // Click handler for bursting oranges
+                orange.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Kill any running GSAP animations on this element
+                    gsap.killTweensOf(orange);
+
+                    const rect = orange.getBoundingClientRect();
+                    const x = rect.left + rect.width / 2;
+                    const y = rect.top + rect.height / 2;
+                    const originalSize = parseFloat(window.getComputedStyle(orange).fontSize);
+
+                    // Remove the original orange
+                    orange.remove();
+
+                    // Create burst indicator
+                    const burst = document.createElement('div');
+                    burst.className = 'orange-burst-temp';
+                    burst.textContent = '🍊';
+                    burst.style.left = x + 'px';
+                    burst.style.top = y + 'px';
+                    burst.style.fontSize = originalSize + 'px';
+                    document.body.appendChild(burst);
+
+                    // Animate the burst indicator with GSAP
+                    gsap.to(burst, {
+                        scale: 2,
+                        opacity: 0,
+                        duration: 0.6,
+                        ease: 'power2.out',
+                        onComplete: function() {
+                            burst.remove();
+                        }
+                    });
+
+                    // Create particles
+                    createOrangeParticles(x, y);
+                });
+            });
+
+            function createOrangeParticles(x, y) {
+                const particleCount = 12;
+                const particlesContainer = document.createElement('div');
+                particlesContainer.className = 'orange-particles';
+                document.body.appendChild(particlesContainer);
+
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'orange-particle';
+                    particle.style.left = x + 'px';
+                    particle.style.top = y + 'px';
+
+                    particlesContainer.appendChild(particle);
+
+                    // Calculate direction and distance
+                    const angle = (Math.PI * 2 * i) / particleCount;
+                    const distance = 60 + Math.random() * 40;
+                    const particleX = Math.cos(angle) * distance;
+                    const particleY = Math.sin(angle) * distance;
+                    const duration = 0.6 + Math.random() * 0.4;
+
+                    // Animate particle with GSAP
+                    gsap.to(particle, {
+                        x: particleX,
+                        y: particleY,
+                        scale: 0,
+                        opacity: 0,
+                        duration: duration,
+                        ease: 'power2.out'
+                    });
+                }
+
+                // Remove particles container after animations complete
+                setTimeout(function() {
+                    particlesContainer.remove();
+                }, 1000);
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="snowflakes" aria-hidden="true">
@@ -43,9 +522,48 @@
         <div class="snowflake">❄</div>
         <div class="snowflake">❄</div>
         <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
     </div>
 
     <div class="oranges" aria-hidden="true">
+        <div class="orange">🍊</div>
+        <div class="orange">🍊</div>
+        <div class="orange">🍊</div>
+        <div class="orange">🍊</div>
+        <div class="orange">🍊</div>
+        <div class="orange">🍊</div>
+        <div class="orange">🍊</div>
+        <div class="orange">🍊</div>
+        <div class="orange">🍊</div>
         <div class="orange">🍊</div>
         <div class="orange">🍊</div>
         <div class="orange">🍊</div>
@@ -172,10 +690,10 @@
         </section>
 
         <div class="calendar-buttons">
-            <a target="_blank" rel="noopener noreferrer" class="calendar-button gcal-button" href="#">
+            <a target="_blank" rel="noopener noreferrer" class="calendar-button" href="#">
                 Add to Calendar (Google)
             </a>
-            <a href="{% static 'party-jan-2026/party.ics' %}" class="calendar-button ics-button">
+            <a href="{% static 'party-jan-2026/party.ics' %}" class="calendar-button">
                 Add to Calendar (ICS)
             </a>
         </div>
@@ -186,5 +704,6 @@
             <div class="slice slice-3"></div>
         </div>
     </div>
+
 </body>
 </html>
