@@ -487,6 +487,25 @@
                     particlesContainer.remove();
                 }, 1000);
             }
+
+            // Stop all animations after 60 seconds to save people's batteries
+            setTimeout(function() {
+                // Kill all snowflake animations
+                snowflakes.forEach(function(snowflake) {
+                    gsap.killTweensOf(snowflake);
+                });
+
+                // Kill all orange animations
+                oranges.forEach(function(orange) {
+                    gsap.killTweensOf(orange);
+                });
+
+                // Remove containers from DOM
+                const snowflakesContainer = document.querySelector('.snowflakes');
+                const orangesContainer = document.querySelector('.oranges');
+                if (snowflakesContainer) snowflakesContainer.remove();
+                if (orangesContainer) orangesContainer.remove();
+            }, 60000);
         });
     </script>
 </head>
