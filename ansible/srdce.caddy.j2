@@ -1,0 +1,13 @@
+heartfort.com {
+	route {
+		file_server /static/* {
+			root /var/www/srdce
+		}
+		reverse_proxy 127.0.0.1:5003
+	}
+	encode zstd gzip
+	log {
+		output stdout
+		format console
+	}
+}

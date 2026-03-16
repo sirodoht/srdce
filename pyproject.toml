@@ -1,2 +1,35 @@
-[tool.black]
-exclude = '/(\.git|venv)/'
+[project]
+name = "srdce"
+version = "0.1.0"
+description = "heartfort website"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=5.1.3",
+    "gunicorn>=23.0.0",
+    "mistune>=3.0.2",
+]
+
+[dependency-groups]
+dev = [
+    "ansible>=11.0.0",
+    "djade>=1.3.2",
+    "ruff>=0.7.4",
+]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+ignore = ["E501"] # line too long

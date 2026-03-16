@@ -243,5 +243,14 @@ def party_feb_2023(request):
 def party_oct_2023(request):
     return render(request, "main/party-oct-2023.html")
 
+
+def party_apr_2025(request):
+    return render(request, "main/party-apr-2025.html")
+
+
+def party_jan_2026(request):
+    return render(request, "main/party-jan-2026.html")
+
+
 def manuals(request):
     return render(request, "main/manuals.html")
